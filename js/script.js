@@ -1,5 +1,5 @@
 
-const API_KEY = "a8888de72ecb4461991474ad0bff2ce9";
+const API_KEY = "40b8a4db0c974ef59e3ffe2488837905";
 
 
 
@@ -26,6 +26,7 @@ async function getIPData(ip = "") {
 
   try {
     const res = await fetch(url);
+    console.log(await res.text());
     const data = await res.json();
 
     // Update Info Box
