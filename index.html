@@ -2,20 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="./css/style.css">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" 
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" 
+        crossorigin="" />
 
+  <title>IP Address Tracker</title>
 
-  <title>Frontend Mentor | IP Address Tracker </title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    
-    .attribution { font-size: 11px; text-align: center; }
+    .attribution { font-size:11px; text-align:center; margin-top:8px; }
     .attribution a { color: hsl(228, 45%, 44%); }
+    .hero { display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
+    #map { width:100%; height:400px; margin-top:2px; border-radius:8px; overflow:hidden; }
+    #error-message { color:crimson; margin-left:8px; }
+    a#reload { cursor:pointer; color:blue; text-decoration:underline; }
   </style>
 </head>
 <body>
@@ -23,18 +26,19 @@
 <header class="hero-header">
   <h2>IP Address Tracker</h2>
   <div class="search">
-    <input type="text" placeholder="Search for any IP address or domain" id="search-input">
+    <input type="text" placeholder="Search for any IP address or city" id="search-input">
     <button class="arrow" id="search-btn">
       <img src="./images/icon-arrow.svg" alt="search"/>
     </button>
   </div>
-  
-  
+  <a id="reload">Back to your IP</a>
+  <div id="error-message"></div>
 </header>
+
 <div class="hero">
   <div class="her">
     <h4>IP Address</h4>
-  <p id="ip">-</p>
+    <p id="ip">-</p>
   </div> 
   <div class="her"> 
     <h4>Location</h4>
@@ -44,20 +48,26 @@
     <h4>Timezone</h4>
     <p id="timezone">-</p>
   </div>
-
   <div class="her">
     <h4>ISP</h4>
     <p id="isp">-</p>
   </div>
-</div>
-  <div id="map"></div>
-  
-  <div class="attribution">
-    Challenge by <a rel="noopener" href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Marvellous Ogunleke</a>.
+  <div class="her">
+    <h4>Weather</h4>
+    <p id="weather">-</p>
   </div>
+</div>
 
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<div id="map"></div>
+  
+<div class="attribution">
+  Challenge by <a rel="noopener" href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+  Coded by <a href="#">Marvellous Ogunleke</a>.
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" 
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" 
+        crossorigin=""></script>
 <script src="./js/script.js"></script>
 </body>
 </html>
